@@ -4,10 +4,10 @@ import { ArrowRight, ChevronRight, Triangle, Circle, Square, Hexagon, Zap } from
 const Hero: React.FC = () => {
   return (
     <section className="relative w-full flex flex-col items-center justify-start pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
-      
+
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
-        
+
         {/* Badge */}
         <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <a href="#" className="inline-flex items-center gap-1 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300 hover:bg-violet-500/20 transition-colors cursor-pointer group">
@@ -48,30 +48,49 @@ const Hero: React.FC = () => {
 
       {/* Logo Ticker */}
       <div className="mt-24 w-full border-y border-white/5 bg-white/[0.02] py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-xs font-medium text-zinc-500 mb-6 uppercase tracking-widest">Usado por times inovadores em</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Fake Logos */}
-            <div className="flex items-center gap-2 group cursor-default">
-              <Triangle className="w-5 h-5 fill-current text-white" />
-              <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Acme Corp</span>
-            </div>
-            <div className="flex items-center gap-2 group cursor-default">
-              <Circle className="w-5 h-5 fill-current text-white" />
-              <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Nebula</span>
-            </div>
-            <div className="flex items-center gap-2 group cursor-default">
-              <Square className="w-5 h-5 fill-current text-white" />
-              <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Velocity</span>
-            </div>
-            <div className="flex items-center gap-2 group cursor-default">
-              <Hexagon className="w-5 h-5 fill-current text-white" />
-              <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Kinetix</span>
-            </div>
-            <div className="flex items-center gap-2 group cursor-default">
-              <Zap className="w-5 h-5 fill-current text-white" />
-              <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Bolt.dev</span>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 text-center mb-8">
+          <p className="text-xs font-medium text-zinc-500 uppercase tracking-widest">Usado por times inovadores em</p>
+        </div>
+
+        <div className="relative flex w-full overflow-hidden mask-gradient">
+          {/* Fade masks */}
+          <div className="absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-[#09090b] to-transparent"></div>
+          <div className="absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-[#09090b] to-transparent"></div>
+
+          <div className="flex animate-scroll whitespace-nowrap py-2">
+            {[...Array(2)].map((_, setIndex) => (
+              <div key={setIndex} className="flex items-center gap-16 mx-8">
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Triangle className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Acme Corp</span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Circle className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Nebula</span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Square className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Velocity</span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Hexagon className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Kinetix</span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Zap className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Fluxo.ai</span>
+                </div>
+                {/* Duplicating for length */}
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Triangle className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Echo</span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-default opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <Circle className="w-5 h-5 fill-current text-white" />
+                  <span className="font-bold text-lg text-zinc-300 group-hover:text-white transition-colors">Orbit</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

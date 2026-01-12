@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center">
+            <div className="w-6 h-6 rounded bg-violet-600 flex items-center justify-center">
               <Zap className="w-4 h-4 text-white fill-white" />
             </div>
             <span className="text-lg font-bold">Fluxo.ai</span>
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             A plataforma definitiva para times que constroem o futuro. Gerencie menos, produza mais.
           </p>
         </div>
-        
+
         <div className="flex flex-col gap-4">
           <h4 className="font-semibold text-zinc-200">Produto</h4>
           <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Features</a>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5">
-        <p className="text-zinc-600 text-sm">© 2024 Fluxo.ai Inc. Todos os direitos reservados.</p>
+        <p className="text-zinc-600 text-sm">© 2026 Fluxo.ai Inc. Todos os direitos reservados.</p>
         <div className="flex items-center gap-6 mt-4 md:mt-0">
           <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
           <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
