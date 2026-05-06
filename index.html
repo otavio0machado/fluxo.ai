@@ -1,88 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fluxo.ai - Gestão de Times</title>
+  <meta name="theme-color" content="#0E0F11" />
+
+  <title>Fluxo · automação para e-commerce brasileiro</title>
+  <meta name="description" content="Automação visual entre Tray, Loja Integrada, Bling, Tiny, Mercado Livre, RD Station, WhatsApp Business e mais 11 plataformas brasileiras. Conectores nativos com lógica NF-e, Pix, Boleto. Suporte em PT-BR no horário comercial Brasília." />
+
+  <meta property="og:title" content="Fluxo · automação para e-commerce brasileiro" />
+  <meta property="og:description" content="Tray, Bling, ML, RD, WhatsApp — todos conversando entre si, sem você cuidar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            zinc: {
-              850: '#1f2022',
-              950: '#09090b', // Darker base
-            }
-          },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
           },
-          animation: {
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'blob': 'blob 7s infinite',
+          colors: {
+            ink: '#0E0F11',
+            'ink-soft': '#15171A',
+            'ink-line': '#23262C',
+            chalk: '#F4EFE6',
+            'chalk-soft': '#B5B0A7',
+            'chalk-mute': '#6E6B65',
+            ok: '#2F7D5C',
+            'ok-soft': '#3F9E76',
+            warn: '#C28A2B',
+            err: '#B23A48',
           },
-          keyframes: {
-            blob: {
-              '0%': { transform: 'translate(0px, 0px) scale(1)' },
-              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-              '100%': { transform: 'translate(0px, 0px) scale(1)' },
-            },
-            scroll: {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(-100%)' },
-            }
-          },
-          animation: {
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'blob': 'blob 7s infinite',
-            'scroll': 'scroll 20s linear infinite',
+          letterSpacing: {
+            'tight-2': '-0.02em',
           },
         },
-      }
+      },
+    }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
   <style>
     body {
-      background-color: #09090b;
-      color: white;
+      background-color: #0E0F11;
+      color: #F4EFE6;
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
     }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
+    .rule { border-color: #23262C; }
+    .label-mono {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
-
-    ::-webkit-scrollbar-track {
-      background: #09090b;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #27272a;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3f3f46;
-    }
-
-    .glass-card {
-      background: rgba(24, 24, 27, 0.4);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .text-gradient {
-      background: linear-gradient(to right, #a78bfa, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    /* status pill base */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      border: 1px solid #23262C;
+      background: rgba(21, 23, 26, 0.6);
     }
   </style>
   <script type="importmap">
@@ -97,7 +87,7 @@
 </script>
 </head>
 
-<body>
+<body class="bg-ink text-chalk antialiased">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

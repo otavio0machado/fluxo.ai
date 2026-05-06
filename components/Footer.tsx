@@ -1,53 +1,56 @@
 import React from 'react';
-import { Zap, Twitter, Github, Linkedin } from 'lucide-react';
+import { COMPANY } from '../constants';
 
 const Footer: React.FC = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="w-full border-t border-white/5 bg-zinc-950 pt-16 pb-8 px-6 mt-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-        <div className="col-span-2 md:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-6 h-6 rounded bg-violet-600 flex items-center justify-center">
-              <Zap className="w-4 h-4 text-white fill-white" />
-            </div>
-            <span className="text-lg font-bold">Fluxo.ai</span>
-          </div>
-          <p className="text-zinc-500 text-sm leading-relaxed">
-            A plataforma definitiva para times que constroem o futuro. Gerencie menos, produza mais.
+    <footer className="w-full border-t rule py-14 text-sm">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-8 mb-10">
+        <div className="md:col-span-5">
+          <p className="text-base font-semibold text-chalk tracking-tight-2 mb-2">{COMPANY.name}</p>
+          <p className="label-mono text-chalk-mute mb-4">automação · e-commerce BR · {COMPANY.founded}</p>
+          <p className="text-[13px] text-chalk-soft leading-relaxed max-w-sm">
+            {COMPANY.legalName}<br />
+            CNPJ {COMPANY.cnpj}<br />
+            {COMPANY.address}
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h4 className="font-semibold text-zinc-200">Produto</h4>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Features</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Integrações</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Preços</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Changelog</a>
+        <div className="md:col-span-3">
+          <p className="label-mono text-chalk-mute mb-3">Produto</p>
+          <ul className="space-y-2 text-[13px] text-chalk-soft">
+            <li><a href="#conectores" className="hover:text-chalk transition-colors">Conectores</a></li>
+            <li><a href="#casos" className="hover:text-chalk transition-colors">Casos</a></li>
+            <li><a href="#precos" className="hover:text-chalk transition-colors">Preços</a></li>
+            <li><a href="/changelog" className="hover:text-chalk transition-colors">Changelog</a></li>
+            <li><a href="/status" className="hover:text-chalk transition-colors">Status (status.fluxo.com.br)</a></li>
+          </ul>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h4 className="font-semibold text-zinc-200">Empresa</h4>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Sobre</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Blog</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Carreiras</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Contato</a>
+        <div className="md:col-span-2">
+          <p className="label-mono text-chalk-mute mb-3">Para times</p>
+          <ul className="space-y-2 text-[13px] text-chalk-soft">
+            <li><a href="/docs" className="hover:text-chalk transition-colors">Documentação</a></li>
+            <li><a href="/api" className="hover:text-chalk transition-colors">API</a></li>
+            <li><a href="/sdk" className="hover:text-chalk transition-colors">SDK · Node</a></li>
+          </ul>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h4 className="font-semibold text-zinc-200">Legal</h4>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Privacidade</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Termos</a>
-          <a href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Segurança</a>
+        <div className="md:col-span-2">
+          <p className="label-mono text-chalk-mute mb-3">Suporte</p>
+          <p className="text-[13px] text-chalk-soft leading-relaxed">{COMPANY.supportHours}</p>
+          <p className="text-[13px] text-chalk-soft mt-2">
+            <a href="mailto:suporte@fluxo.com.br" className="hover:text-chalk transition-colors">suporte@fluxo.com.br</a>
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5">
-        <p className="text-zinc-600 text-sm">© 2026 Fluxo.ai Inc. Todos os direitos reservados.</p>
-        <div className="flex items-center gap-6 mt-4 md:mt-0">
-          <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-          <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
-          <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
-        </div>
+      <div className="max-w-6xl mx-auto px-5 md:px-8 border-t rule pt-6 flex flex-col md:flex-row gap-3 justify-between text-[12px] text-chalk-mute">
+        <p>© {year} {COMPANY.legalName}. Conteúdo deste site é fictício, parte de um study case.</p>
+        <p>
+          Este é um <a className="underline hover:text-chalk" href="https://github.com/otavio0machado/fluxo.ai" target="_blank" rel="noopener noreferrer">study case</a> — Fluxo não é uma empresa em operação.
+        </p>
       </div>
     </footer>
   );
